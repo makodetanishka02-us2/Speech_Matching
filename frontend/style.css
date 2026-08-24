@@ -1,0 +1,712 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #07101d;
+    color: #d7e1ef;
+    min-height: 100vh;
+}
+
+.container {
+    width: 92%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px 0 70px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 1px solid #567bac;
+    border-radius: 30px;
+    color: #9fb1c9;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    color: #a668d6;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-family: "Orbitron", sans-serif;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+    font-size: 19px;
+    color: #aabbd0;
+}
+
+
+/* =========================
+   UPLOAD CARDS
+========================= */
+
+.upload-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.audio-card {
+    background: #101a29;
+    border: 2px solid #4c2672;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.audio-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.letter {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #400d49;
+    color: #e1ebed;
+}
+
+.letter-b {
+    background: #400d49;
+    color: #d3deef;
+}
+
+.upload-box {
+    height: 185px;
+
+    border: 2px dashed #4a1e88;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #718aaa;
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.upload-box:hover {
+    border-color: #26d5e9;
+    background: #111f31;
+}
+
+.upload-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+    color: #5e7ca2;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+#compareButton {
+    display: block;
+
+    margin: 30px auto;
+
+    padding: 17px 45px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: #a74eb9;
+    color: rgb(254, 254, 254);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+#compareButton:hover:not(:disabled) {
+    background: #652b91;
+    transform: translateY(-2px);
+}
+
+#compareButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* =========================
+   COMPARISON RESULT
+========================= */
+
+.comparison-result {
+    background: #07101d;
+    border: 1px solid #3c2360;
+    border-radius: 22px;
+
+    padding: 35px;
+
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+    box-shadow:
+        0 0 25px rgba(166, 104, 214, 0.08),
+        inset 0 0 30px rgba(20, 10, 40, 0.25);
+}
+
+
+/* =========================
+   RESULT HEADER
+========================= */
+
+.result-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+.result-heading h2 {
+    margin: 0;
+
+    font-size: 30px;
+    letter-spacing: 1px;
+
+    color: #a668d6;
+}
+
+
+.result-icon {
+    width: 48px;
+    height: 48px;
+
+    border: 2px solid #a668d6;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #c46cff;
+
+    font-size: 27px;
+
+    box-shadow:
+        0 0 12px rgba(166, 104, 214, 0.35);
+}
+
+
+/* =========================
+   TOP COMPARISON
+========================= */
+
+.comparison-top {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   FINGERPRINT CARDS
+========================= */
+
+.fingerprint-card {
+
+    position: relative;
+
+    background: #091321;
+
+    border: 1px solid #30345c;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    min-height: 255px;
+
+    overflow: hidden;
+}
+
+
+/* Purple glowing side */
+
+.card-a {
+    border-left: 5px solid #a43cf0;
+
+    box-shadow:
+        inset 8px 0 20px rgba(164, 60, 240, 0.08);
+}
+
+
+.card-b {
+    border-right: 5px solid #a43cf0;
+
+    box-shadow:
+        inset -8px 0 20px rgba(164, 60, 240, 0.08);
+}
+
+
+/* =========================
+   AUDIO RESULT TITLE
+========================= */
+
+.audio-result-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+
+.result-letter {
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #6635a0,
+            #32145e
+        );
+
+    color: white;
+
+    font-size: 34px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 15px rgba(166, 104, 214, 0.25);
+}
+
+
+.audio-result-title h3 {
+
+    color: #b75cff;
+
+    font-size: 20px;
+
+    margin-bottom: 6px;
+
+    letter-spacing: 0.5px;
+}
+
+
+.audio-result-title span {
+
+    color: #89a4c9;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   FINGERPRINT VALUE
+========================= */
+
+.fingerprint-value {
+
+    font-family: "Courier New", monospace;
+
+    font-size: 27px;
+
+    letter-spacing: 2px;
+
+    color: #edf3ff;
+
+    margin-top: 18px;
+
+    word-break: break-all;
+}
+
+
+/* =========================
+   FINGERPRINT CHARACTERS
+========================= */
+
+.fingerprint-chars {
+
+    display: flex;
+
+    gap: 5px;
+
+    margin-top: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+.fingerprint-chars span {
+
+    width: 28px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #6331a0;
+
+    border-radius: 5px;
+
+    background: #11152b;
+
+    color: #c98aff;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.result-statistics {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #091321;
+
+    border: 1px solid #30345c;
+
+    border-radius: 18px;
+
+    min-height: 150px;
+}
+
+
+.result-stat {
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 30px 50px;
+
+    gap: 25px;
+}
+
+
+.result-stat:first-child {
+
+    border-right: 1px dashed #3c4568;
+}
+
+
+/* =========================
+   STAT ICON
+========================= */
+
+.stat-icon {
+
+    width: 88px;
+    height: 88px;
+
+    min-width: 88px;
+
+    border-radius: 50%;
+
+    border: 2px solid #9f42df;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #bd5cff;
+
+    font-size: 40px;
+
+    box-shadow:
+        0 0 15px rgba(166, 104, 214, 0.2);
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.stat-divider {
+
+    width: 1px;
+
+    height: 65px;
+
+    background: #303b5b;
+}
+
+
+/* =========================
+   STAT CONTENT
+========================= */
+
+.stat-content h3 {
+
+    color: #b75cff;
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+
+    letter-spacing: 0.5px;
+}
+
+
+.stat-content strong {
+
+    color: #f0f4ff;
+
+    font-size: 42px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .comparison-top {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .result-statistics {
+
+        grid-template-columns: 1fr;
+    }
+
+    .result-stat:first-child {
+
+        border-right: none;
+
+        border-bottom: 1px dashed #3c4568;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .comparison-result {
+
+        padding: 20px;
+    }
+
+    .result-heading h2 {
+
+        font-size: 22px;
+    }
+
+    .fingerprint-card {
+
+        padding: 20px;
+    }
+
+    .fingerprint-value {
+
+        font-size: 20px;
+    }
+
+    .result-stat {
+
+        padding: 25px;
+    }
+
+    .stat-icon {
+
+        width: 65px;
+        height: 65px;
+
+        min-width: 65px;
+
+        font-size: 30px;
+    }
+
+    .stat-content strong {
+
+        font-size: 32px;
+    }
+}
+
+/* =========================
+   PIPELINE
+========================= */
+
+.pipeline {
+    background: #0f1827;
+    border: 2px solid #263f60;
+    border-radius: 20px;
+
+    padding: 30px;
+    margin-top: 25px;
+}
+
+.pipeline h2 {
+    font-size: 23px;
+    margin-bottom: 35px;
+    color: #dce5f1;
+}
+
+.steps {
+    max-width: 900px;
+}
+
+.step {
+    display: flex;
+    gap: 20px;
+
+    position: relative;
+
+    padding-bottom: 35px;
+}
+
+.step > span {
+    min-width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    background: #2a1336;
+    color: #dfd4df;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+.step:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    left: 17px;
+    top: 36px;
+
+    width: 1px;
+    height: calc(100% - 36px);
+
+    background: #294968;
+}
+
+.step h3 {
+    color: #dce5f1;
+    margin-bottom: 8px;
+}
+
+.step p {
+    color: #7891b2;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .upload-container {
+        grid-template-columns: 1fr;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .audio-card {
+        padding: 18px;
+    }
+}
